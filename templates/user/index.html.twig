@@ -5,10 +5,9 @@
 {% block body %}
     <div class="container min-vh-100 d-flex flex-column justify-content-center">
         <h1>Bienvenue {{ user.firstname }} {{ user.lastname }} !</h1>
-        <a href="{{ logout_path() }}">Déconnexion</a>
         <a href="{{ path('add_article') }}">Ajouter un article</a>
 
-        <div class="row justify-content-between">
+        <div class="row justify-content-between mb-5">
             {% for article in articles %}
                 <div class="col-5 card mt-5 mx-auto px-2">
                     <h2 class="mb-2">{{ article.title }}</h2>
@@ -23,7 +22,7 @@
                     <p>{{ article.content }}</p>
                     <small>Auteur : {{ user.firstname }},  {% if article.updatedAt is not null and article.updatedAt|date('U') > article.createdAt|date('U') %}
                             modifié le : {{ article.updatedAt|date('d/m/Y à H:i', 'Europe/Paris') }} {% else %}
-                            {{ article.createdAt|date('d/m/Y à H:i', 'Europe/Paris') }}{% endif %}</small>
+                            créé le : {{ article.createdAt|date('d/m/Y à H:i', 'Europe/Paris') }}{% endif %}</small>
                     <div class="my-2">
                         <a href="{{ path('edit_article', { id: article.id }) }}">Modifier</a>
                     </div>
