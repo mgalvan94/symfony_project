@@ -5,7 +5,6 @@ framework:
     # Note that the session will be started ONLY if you read or write from it.
     session:
         cookie_lifetime: 3600
-        gc_maxlifetime: 3600
 
     #esi: true
     #fragments: true
