@@ -1,9 +1,23 @@
-.input-group> :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+.input-group > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 }
 
-input.form-control:focus, textarea.form-control:focus {
-    box-shadow: none!important;
-    border-color: #ffc107!important;
+input.form-control:focus,
+textarea.form-control:focus {   
+    box-shadow: none !important;
+    border-color: #ffc107 !important;
+}
+
+.nav-link {
+    padding: 10px!important;
+}
+
+button:focus {
+    box-shadow: none !important;
+}
+
+.active {
+    background-color: #ffc107 !important;
+    color: #212529 !important;
 }
