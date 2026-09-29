@@ -5,7 +5,7 @@
 {% block body %}
     <div class="container">
         <h2 class="mt-4">Les derniers articles</h2>
-        <div class="row my-5" data-masonry='{"percentPosition": true }'>
+        <div class="row my-5">
             {% if articles is empty %}
                 <p>Aucun article trouvé.</p>
             {% endif %}
@@ -14,9 +14,9 @@
                     <div class="card h-100">
                         <div class="card-body">
                             <h5 class="card-title">{{ article.title }}</h5>
-                            <img src="{{ asset('uploads/images/' ~ article.image) }}" class="card-img-top" alt="{{ article.title }}">
-                            <p class="card-text">{{ article.content|slice(0, 100) ~ '...' }}</p>
-                            <a href="{{ path('app_article', {'id': article.id}) }}" class="btn btn-primary">Lire la suite</a> 
+                            <img src="{{ asset('uploads/images/' ~ article.image) }}" class="card-img article-image" alt="{{ article.title }}">
+                            <p class="card-text my-2">{{ article.content|slice(0, 100) ~ '...' }}</p>
+                            <a href="{{ path('app_article', {'id': article.id}) }}" class="btn btn-warning">Lire la suite</a> 
                             <p class="card-text mt-2">
                                 <small>Créé le {{ article.createdAt|date('d/m/Y à H:i') }}</small>
                                 {% if isEdit %}

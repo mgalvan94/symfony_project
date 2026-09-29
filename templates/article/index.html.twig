@@ -11,7 +11,7 @@
             <div class="card col-lg-8 mx-auto mb-5">
                 <div class="card-body">
                     <h2 class="card-title mb-3">{{ article.title }}</h5>
-                    <img src="{{ asset('uploads/images/' ~ article.image) }}" class="card-img-top" alt="{{ article.title }}">
+                    <img src="{{ asset('uploads/images/' ~ article.image) }}" class="card-img one-article-image" alt="{{ article.title }}">
                     <p class="card-text mt-2">{{ article.content }}</p>
                     <p class="card-text mt-2">
                         <small>Créé le {{ article.createdAt|date('d/m/Y à H:i') }}</small>
