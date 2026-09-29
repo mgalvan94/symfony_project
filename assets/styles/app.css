@@ -1,16 +1,20 @@
-.input-group > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+a:not(nav a) {
+    color: #212529 !important;
+}
+
+.input-group> :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 }
 
 input.form-control:focus,
-textarea.form-control:focus {   
+textarea.form-control:focus {
     box-shadow: none !important;
     border-color: #ffc107 !important;
 }
 
 .nav-link {
-    padding: 10px!important;
+    padding: 10px !important;
 }
 
 button:focus {
@@ -20,4 +24,16 @@ button:focus {
 .active {
     background-color: #ffc107 !important;
     color: #212529 !important;
+}
+
+.article-image {
+    height: 250px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.one-article-image {
+    height: 500px;
+    object-fit: cover;
+    width: 100%;
 }

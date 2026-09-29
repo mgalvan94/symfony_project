@@ -10,16 +10,20 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use App\Entity\User;
+use App\Repository\ArticleRepository;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use App\Service\FileUploader;
 
 final class ArticleController extends AbstractController
 {
-    #[Route('/article', name: 'app_article')]
-    public function index(): Response
+    #[Route('/article/{id}', name: 'app_article')]
+    public function index(ArticleRepository $articleRepository, $id): Response
     {
+        $article = $articleRepository->find($id);
+
         return $this->render('article/index.html.twig', [
-            'controller_name' => 'ArticleController',
+            'article' => $article,
+            'isEdit' => true
         ]);
     }
 
